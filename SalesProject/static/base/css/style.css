@@ -7,7 +7,13 @@ body {
 .navbar.navbar-expand-lg.text-white{
    background-color: #000;
     z-index:1;
+    width: 100%;
 
+}
+
+
+.navbar{
+position:fixed;
 }
 /* General link styles*/
 a {
