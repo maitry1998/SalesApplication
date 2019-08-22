@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+{% load crispy_forms_tags %}
+
+<h2>Items in our Store are</h2>
+
+ <div class="container">
+  <div class="row">
+       {% for it in item reversed %}
+    <div class="col-sm-4">
+      <div class="card rounded border border-secondary" style="width:250px">
+    <img class="card-img-top rounded " src="{{ it.ItemImage.url}}" alt="Card image" style="width:100%;height:150px;padding:5px">
+    <div class="card-body">
+      <h4 class="card-title">{{ it.ItemName }}</h4>
+      <p class="card-text">{{it.ItemPrice}} Rs</p>
+      <a href="{% url 'individual' it.id %}" class="btn btn-primary">View</a>
+    </div>
+    </div>
+
+  </div>
+      {% endfor %}
+</div>
+
+ </div>
+     <br>
+
+
+{% endblock %}

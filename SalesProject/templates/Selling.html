@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %}Selling Page{% endblock %}
+{% block body %}
+{% load crispy_forms_tags %}
+
+    <h2>Selling</h2>
+
+  <form method="post" enctype="multipart/form-data" >
+      {{form.errors}}
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <button class="btn btn-primary">Sale</button>
+
+  </form>
+
+{% endblock %}
